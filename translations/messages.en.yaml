@@ -1,0 +1,4 @@
+home:
+    title: 'congress Title'
+    intro: 'Intro to congress Title'
+    description: 'congress *Description*, in _markdown_'
