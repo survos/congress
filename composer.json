@@ -107,7 +107,7 @@
         },
         "admin_lte_bundle": {
             "type": "vcs",
-            "url": "git@github.com:tacman/AdminLTEBundle.git"
+            "url": "git@github.com:survos/AdminLTEBundle.git"
         }
     }
 }

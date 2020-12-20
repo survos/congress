@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "046827bb150106ca1c0120057fc75385",
+    "content-hash": "8f1466ca8fd5be91c7463fa64b800647",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -3609,12 +3609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/BaseBundle.git",
-                "reference": "465a3386edb7c89cf9bf9d05b7c264bdb8c8d69c"
+                "reference": "8f765eee813f4ed2b7797106daf55eed81171370"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/BaseBundle/zipball/465a3386edb7c89cf9bf9d05b7c264bdb8c8d69c",
-                "reference": "465a3386edb7c89cf9bf9d05b7c264bdb8c8d69c",
+                "url": "https://api.github.com/repos/survos/BaseBundle/zipball/8f765eee813f4ed2b7797106daf55eed81171370",
+                "reference": "8f765eee813f4ed2b7797106daf55eed81171370",
                 "shasum": ""
             },
             "require": {
@@ -3674,7 +3674,7 @@
                 "source": "https://github.com/survos/BaseBundle/tree/master",
                 "issues": "https://github.com/survos/BaseBundle/issues"
             },
-            "time": "2020-12-20T15:10:40+00:00"
+            "time": "2020-12-20T16:58:04+00:00"
         },
         {
             "name": "symfony/asset",
