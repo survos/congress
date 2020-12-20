@@ -3561,12 +3561,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/BaseBundle.git",
-                "reference": "8f765eee813f4ed2b7797106daf55eed81171370"
+                "reference": "abc2a66dec6f235e96d01661995ca2db1b50b3eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/BaseBundle/zipball/8f765eee813f4ed2b7797106daf55eed81171370",
-                "reference": "8f765eee813f4ed2b7797106daf55eed81171370",
+                "url": "https://api.github.com/repos/survos/BaseBundle/zipball/abc2a66dec6f235e96d01661995ca2db1b50b3eb",
+                "reference": "abc2a66dec6f235e96d01661995ca2db1b50b3eb",
                 "shasum": ""
             },
             "require": {
@@ -3626,7 +3626,7 @@
                 "source": "https://github.com/survos/BaseBundle/tree/master",
                 "issues": "https://github.com/survos/BaseBundle/issues"
             },
-            "time": "2020-12-20T16:58:04+00:00"
+            "time": "2020-12-20T17:42:41+00:00"
         },
         {
             "name": "symfony/asset",
