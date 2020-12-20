@@ -126,6 +126,9 @@
     "guzzlehttp/psr7": {
         "version": "1.7.0"
     },
+    "heroku/heroku-buildpack-php": {
+        "version": "v187"
+    },
     "kevinpapst/adminlte-bundle": {
         "version": "0.9",
         "recipe": {
