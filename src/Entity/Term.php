@@ -29,7 +29,7 @@ class Term extends SurvosBaseEntity
     private $start;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $endDate;
 
@@ -88,7 +88,7 @@ class Term extends SurvosBaseEntity
         return $this->endDate;
     }
 
-    public function setEndDate(\DateTimeInterface $endDate): self
+    public function setEndDate(?\DateTimeInterface $endDate): self
     {
         $this->endDate = $endDate;
 

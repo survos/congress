@@ -9,12 +9,25 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/tac/survos/congress/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/tac/survos/congress/templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-    </ul>
+    <table class="tablle">
+        {% for l in legislators  %}
+            <tr>
+            <td>{{ l.name }}</td>
+            <td>
+                <table class="table">
+                    {% for term in l.terms %}
+                    <tr>
+                        <td>{{ term.type }}</td>
+                        <td>{{ term.party }}</td>
+                        <td>{{ term.start|date('Y') }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </td>
+            </tr>
+        {% endfor %}
+
+    </table>
 </div>
 {% endblock %}
