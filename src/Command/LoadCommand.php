@@ -37,7 +37,7 @@ class LoadCommand extends Command
         $this
             ->setDescription('Add a short description for your command')
             ->addArgument('url', InputArgument::OPTIONAL, 'Argument description', 'https://theunitedstates.io/congress-legislators/legislators-current.json')
-            ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description')
+            ->addOption('cache', null, InputOption::VALUE_NONE, 'Use the cache, useful during development')
         ;
     }
 
@@ -45,17 +45,25 @@ class LoadCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
         $fn = $this->bag->get('kernel.project_dir') . "/public/data.json";
-        $io->warning("Loading from " . ($url = $input->getArgument('url')));
-        if (!file_exists($fn)) {
-            file_put_contents($fn, file_get_contents($url));
+        $io->info("Loading from " . ($url = $input->getArgument('url')));
+        if ($input->getOption('cache')) {
+            if (file_exists($fn)) {
+                $data = json_decode(file_get_contents($fn));
+            } else {
+                $io->info("Fetching " . $url);
+                $data = json_decode($json = file_get_contents($url));
+                file_put_contents($fn,$json);
+            }
+        } else {
+            $data = json_decode(file_get_contents($url));
         }
 
-        foreach (json_decode(file_get_contents($fn)) as $d) {
+
+        foreach ($data as $d) {
             $name = $d->name;
             $legislator = (new Legislator())
-                ->setData($d)
                 ->setName($name->official_full ?? "$name->first $name->last")
-                ;
+            ;
             foreach ($d->terms as $t) {
                 $t->endData = new \DateTime($t->end);
                 $t->start = new \DateTime($t->start);
@@ -63,8 +71,11 @@ class LoadCommand extends Command
                 $term = (new Term())
                     ->populateFromOptions((array) $t);
                 $legislator->addTerm($term);
-                $this->em->persist($legislator);
             }
+            $this->em->persist($legislator);
+            unset($d->terms);
+            $legislator
+                ->setData($d);
         }
         $this->em->flush();
         $io->success('Data loaded from ' . $url);
